@@ -22,6 +22,7 @@
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/contact_app/templates" />
         <option value="$MODULE_DIR$/mmatimes_app/templates" />
+        <option value="$MODULE_DIR$/accounts_app/templates" />
       </list>
     </option>
   </component>

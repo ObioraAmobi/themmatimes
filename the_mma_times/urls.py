@@ -19,12 +19,17 @@ from mmatimes_app import views as mmatimes_views
 from contact_app import views as contact_views
 from .settings import MEDIA_ROOT
 from django.views.static import serve
+from accounts_app import views as accounts_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', mmatimes_views.post_list, name='index'),
     url(r'^(?P<id>\d+)/$', mmatimes_views.post_detail, name='post_detail'),
-    url(r'^contact/', contact_views.contact, name='contact'),
+    url(r'^contact/$', contact_views.contact, name='contact'),
+    url(r'^register/$', accounts_views.register, name='register'),
+    url(r'^login/$', accounts_views.login, name='login'),
+    url(r'^//logout/$', accounts_views.logout, name='logout'),
 
     # Media root for images
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'disqus',
     'django.contrib.sites',
+    'accounts_app',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -138,3 +139,8 @@ MEDIA_URL = '/media/'
 
 
 DISQUS_WEBSITE_SHORTNAME = 'ObisBlog'
+
+
+AUTH_USER_MODEL = 'accounts_app.User'
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+                           'accounts_app.backends.EmailAuth',)
