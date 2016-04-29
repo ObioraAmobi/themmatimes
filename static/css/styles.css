@@ -1,0 +1,11 @@
+#main{
+    float: left;
+    max-width: 500px;
+    text-align: left;
+}
+
+#side{
+    float: right;
+    max-width: 300px;
+    padding: 20px;
+}

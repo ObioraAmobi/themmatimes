@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('{% static 'img/natediaz.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">The MMA Times</h1>
+                        <hr class="small">
+                        <span class="subheading">Your Daily Dose of MMA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="main">
+        {% block main %}
+        {% endblock main%}
+    </div>
+
+    <div id="side" class="panel panel-default">
+        <div class="panel-body">
+        {% block side %}
+        {% endblock side %}
+        </div>
+    </div>
+{% endblock %}

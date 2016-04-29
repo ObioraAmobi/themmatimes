@@ -6,7 +6,8 @@ from django.shortcuts import render, get_object_or_404
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, "index.html", {'posts': posts})
+    trends = Post.objects.filter(published_date__lte=timezone.now()).order_by('-views')[:3]
+    return render(request, "index.html", {'posts': posts, 'trends': trends})
 
 
 def post_detail(request, id):
