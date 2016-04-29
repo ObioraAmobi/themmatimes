@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+    {% load bootstrap_tags %}
+
+    <header class="intro-header" style="background-image: url('{% static 'img/UFC-Octagon.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>The MMA Times</h1>
+                        <hr class="small">
+                        <span class="subheading">Have questions? I have answers (maybe).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h3>Contact Us</h3>
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form | as_bootstrap }}
+
+            <button type="submit" class=" btn btn- btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}

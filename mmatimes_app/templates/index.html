@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('{% static 'img/natediaz.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">The MMA Times</h1>
+                        <hr class="small">
+                        <span class="subheading">Your Daily Dose of MMA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    {% for post in posts %}
+        <div class="container" style="background: white;">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-preview">
+                        <a href="{{ post.id }}">
+                            <h2 class="post-title">
+                                {{ post.title }}
+                            </h2>
+                        </a>
+                            <p class="post-subtitle">
+                                {{ post.content | truncatewords:20 }}
+                            </p>
+                        <p class="post-meta">Posted by <a href="#">{{ post.author }}</a> {{ post.published_date }} | Tag: {{ post.tag }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr>
+{% endblock %}
+
+</body>
+
+</html>
