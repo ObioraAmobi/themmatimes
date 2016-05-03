@@ -26,6 +26,13 @@ SECRET_KEY = 'zl*&2nnnt&irf@p%pyb0&#ji4l0=j^-@di_mn)+49wsmvo3t)r'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SITE_ID = 2
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'amobib@tcd.ie'
+EMAIL_HOST_PASSWORD = '-----'
+EMAIL_PORT = 587
 
 
 # Application definition

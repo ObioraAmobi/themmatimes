@@ -10,7 +10,7 @@ def contact(request):
         if form.is_valid():
             email = EmailMessage()
             email.from_email = form.cleaned_data.get('email')
-            email.to = ['myemail']
+            email.to = ['amobib@tcd.ie']
             email.topic = form.cleaned_data.get('topic')
             email.body = form.cleaned_data.get('message')
             our_form = form.save(commit=False)

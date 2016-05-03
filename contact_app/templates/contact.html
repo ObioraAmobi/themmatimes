@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <form method="POST" enctype="multipart/form-data" name="sentMessage" id="contactForm" novalidate>
+                <form method="POST" enctype="multipart/form-data" name="sentMessage" id="contactForm">
 
                     {% csrf_token %}
                     {{ form | as_bootstrap }}
