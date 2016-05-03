@@ -17,15 +17,19 @@
         </div>
     </header>
 
-    <div id="main">
-        {% block main %}
-        {% endblock main%}
-    </div>
+    <div class="container" style="background: white;">
+        <div class="row">
+            <div class="col-md-9">
+                {% block main %}
+                {% endblock main%}
+            </div>
 
-    <div id="side" class="panel panel-default">
-        <div class="panel-body">
-        {% block side %}
-        {% endblock side %}
+            <div class="col-md-3">
+                <div class="panel panel-danger">
+                    {% block side %}
+                    {% endblock side %}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

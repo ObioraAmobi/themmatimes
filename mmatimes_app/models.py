@@ -11,7 +11,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(default=timezone.now, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
     views = models.IntegerField(default=0)
-    tag = models.CharField(max_length=30, blank=True, null=True)
+    tag = models.CharField(max_length=30, blank=True, null=True, default='MMA')
 
     def publish(self):
         self.published_date = timezone.now()

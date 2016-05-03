@@ -7,35 +7,41 @@
     {% block main %}
 
     {% for post in posts %}
-        <div style="background: white;">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-1">
-                    <div class="post-preview">
-                        <a href="{{ post.id }}">
-                            <h2 class="post-title">
-                                {{ post.title }}
-                            </h2>
-                        </a>
-                            <p class="post-subtitle">
-                                {{ post.content | truncatewords:20 }}
-                            </p>
-                        <p class="post-meta">{{ post.published_date }} | Tag: {{ post.tag }}</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col-md-4 text-center">
+            <img class="img-responsive img-thumbnail" src="media/{{ post.image }}" style="width:200px;height:150px;margin-top:25px;">
         </div>
+        <div class="post-preview col-md-8">
+            <a href="{{ post.id }}">
+                <h2 class="post-title">
+                    {{ post.title }}
+                </h2>
+            </a>
+            <p class="post-subtitle">
+                {{ post.content | truncatewords:20 }}
+            </p>
+            <p class="post-meta">{{ post.published_date }} | Tag: {{ post.tag }}</p>
+        </div>
+        <hr>
     {% endfor %}
 
     {% endblock %}
 
     {% block side %}
-    {% for trend in trends %}
-        <h5 class="post-title">
-            {{ trend.title }}
-        </h5>
-        <p class="post-subtitle">
-            {{ trend.content | truncatewords:10 }}
-        </p>
+        <div class="panel-heading">
+            <h4 style="text-align: center;">Most Popular</h4>
+        </div>
+        {% for trend in trends %}
+        <div class="row panel-body">
+            <div class="col-md-2">
+                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            </div>
+            <div class="col-md-10" style="font-family: Ubuntu; font-size: 15px;">
+                <a href="{{ trend.id }}">
+                    {{ trend.title }}
+                </a>
+            </div>
+        </div>
+
     {% endfor %}
 
     {% endblock %}
