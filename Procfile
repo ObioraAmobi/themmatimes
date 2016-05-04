@@ -1,1 +1,1 @@
-web: gunicorn themmatimes.wsgi:application
+web: gunicorn the_mma_times.wsgi:application
