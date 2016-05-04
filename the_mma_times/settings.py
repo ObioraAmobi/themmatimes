@@ -30,7 +30,7 @@ SITE_ID = 2
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'amobib@tcd.ie'
+EMAIL_HOST_USER = 'obiora.amobi@gmail.com'
 EMAIL_HOST_PASSWORD = '-----'
 EMAIL_PORT = 587
 
